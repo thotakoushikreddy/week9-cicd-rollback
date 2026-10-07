@@ -1,9 +1,10 @@
 pipeline {
+
     agent any
 
-environment {
-    PATH = "/Applications/Docker.app/Contents/Resources/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-}
+    environment {
+        PATH = "/Applications/Docker.app/Contents/Resources/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    }
 
     stages {
 
@@ -41,13 +42,14 @@ environment {
 
         stage('Deploy') {
             steps {
-                echo 'Deployment stage'
+                sh 'chmod +x scripts/deploy.sh'
+                sh './scripts/deploy.sh'
             }
         }
 
         stage('Verify') {
             steps {
-                echo 'Application verification stage'
+                sh 'curl -f http://localhost:8081'
             }
         }
 
