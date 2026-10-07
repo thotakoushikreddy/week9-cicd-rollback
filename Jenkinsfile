@@ -30,7 +30,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t week9-cicd-app:1.0 .'
+                sh 'docker build -t week9-cicd-app:2.0 .'
             }
         }
 

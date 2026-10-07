@@ -2,7 +2,7 @@
 
 set -e
 
-IMAGE="week9-cicd-app:1.0"
+IMAGE="week9-cicd-app:2.0"
 CONTAINER="week9-production"
 
 echo "Starting deployment..."
